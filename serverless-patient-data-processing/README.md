@@ -1,5 +1,7 @@
 # Serverless Patient Data Processing System
 
+--
+
 This project is a serverless application designed to ingest, process, and analyze patient health data using AWS services. It leverages AWS Lambda for serverless computing, Amazon API Gateway for API management, Amazon S3 for data storage, and DynamoDB for storing processed data. The infrastructure is managed using Terraform, following Infrastructure as Code (IaC) principles.
 
 ## Key Features
@@ -18,4 +20,3 @@ This project is a serverless application designed to ingest, process, and analyz
 3. Upload patient data to S3 and interact with processed data through the API Gateway.
 
 This project provides a scalable and secure way to handle patient data processing in a cloud-native environment.
-
