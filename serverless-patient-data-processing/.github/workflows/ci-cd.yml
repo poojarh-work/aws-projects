@@ -45,11 +45,11 @@ jobs:
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v2
         with:
-          terraform_version: 1.5.0  # You can specify any version you need
+          terraform_version: 1.0.0  # You can specify any version you need
      
       - name: Deploy to AWS
   
-        run: |
+        run:
           cd terraform
           terraform init
           terraform plan -out=tfplan
