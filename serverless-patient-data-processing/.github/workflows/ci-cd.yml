@@ -11,11 +11,21 @@ on:
 jobs:
   terraform:
     runs-on: ubuntu-latest
-
+    environment: aws
+    
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Set AWS credentials
+        run: |
+          echo "AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}" >> $GITHUB_ENV
+          echo "AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}" >> $GITHUB_ENV
+          echo "AWS_DEFAULT_REGION=${{ secrets.AWS_REGION }}" >> $GITHUB_ENV
+          export AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}
+          export AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          export AWS_DEFAULT_REGION=${{ secrets.AWS_REGION }}
+      
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
@@ -38,10 +48,7 @@ jobs:
           terraform_version: 1.5.0  # You can specify any version you need
      
       - name: Deploy to AWS
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_DEFAULT_REGION: 'eu-north-1'  
+  
         run: |
           cd terraform
           terraform init
