@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+
+# Terraform
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+#.terraform.lock.hcl
+
+# AWS credentials
+.aws/
+*.pem
+*.key
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Logs
+*.log
+
+# IDE specific
+.idea/
+.vscode/
