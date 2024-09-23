@@ -27,3 +27,5 @@ terraform.tfstate.backup
 # IDE specific
 .idea/
 .vscode/
+
+.github/workflows/ci-cd.yml
