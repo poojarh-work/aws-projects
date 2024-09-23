@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Set AWS credentials
-        run: |
+        run:
           echo "AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}" >> $GITHUB_ENV
           echo "AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}" >> $GITHUB_ENV
           echo "AWS_DEFAULT_REGION=${{ secrets.AWS_REGION }}" >> $GITHUB_ENV
@@ -32,12 +32,12 @@ jobs:
           python-version: '3.11'  # Specify your Python version 1122
 
       - name: Install dependencies
-        run: |
+        run:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
       - name: Run tests
-        run: |
+        run:
           # Replace with your test command, if any
           echo "No tests to run."
       
