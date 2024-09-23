@@ -35,7 +35,7 @@ jobs:
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v2
         with:
-          terraform_version: 5.67.0  # You can specify any version you need
+          terraform_version: 1.5.0  # You can specify any version you need
      
       - name: Deploy to AWS
         env:
